@@ -1,6 +1,6 @@
 package by.emall.ui;
 
-import by.emall.enums.CatalogSections;
+import by.emall.pages.enums.CatalogSections;
 import by.emall.pages.CatalogPage;
 import by.emall.pages.HomePage;
 import by.emall.pages.base.singleton.Cookies;

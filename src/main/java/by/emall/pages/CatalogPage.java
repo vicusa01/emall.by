@@ -1,8 +1,7 @@
 package by.emall.pages;
 
-import by.emall.enums.CatalogSections;
+import by.emall.pages.enums.CatalogSections;
 import by.emall.pages.base.singleton.Singleton;
-import by.emall.pages.base.utils.WaitUtil;
 import by.emall.pages.base.utils.XPathUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

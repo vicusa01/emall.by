@@ -1,6 +1,6 @@
 package by.emall.pages.base.utils;
 
-import by.emall.enums.CatalogSections;
+import by.emall.pages.enums.CatalogSections;
 
 public class XPathUtil {
     public static String getXPathByCategory(CatalogSections category) {
