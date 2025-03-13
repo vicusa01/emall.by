@@ -1,4 +1,4 @@
-package by.emall.cart;
+package by.emall.api.cart;
 
 public class ErrorMessages {
     public static final String INCORRECT_OFFER_ID = "Выбранное значение для \"offer id\" некорректно.";

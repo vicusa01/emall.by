@@ -1,10 +1,12 @@
-package by.emall;
+package by.emall.api;
 
-import by.emall.logIn.ErrorMessages;
-import by.emall.logIn.LogIn;
+import by.emall.api.logIn.ErrorMessages;
+import by.emall.api.logIn.LogIn;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -15,7 +17,7 @@ public class LogInTest {
     }
 
     @Test
-    @DisplayName("[LOGIN][PASSWORD] empty fileds")
+    @DisplayName("[LOGIN][PASSWORD] empty fields")
     public void testLogIn() {
         LogIn.logInPasswordRequest()
                 .then()
@@ -26,48 +28,28 @@ public class LogInTest {
                 .body("errors.password[0]", equalTo(ErrorMessages.REQUIRED_PASSWORD));
     }
 
-    @Test
-    @DisplayName("[LOGIN][PASSWORD] invalid phone")
-    public void testLogIn1() {
-        LogIn.logInPasswordRequest("75293527282", "2375843")
+    @ParameterizedTest
+    @CsvFileSource(resources = "/logInData.csv", numLinesToSkip = 1)
+    @DisplayName("[LOGIN][PASSWORD] test")
+    public void testLogIn1(String phone, String password, Integer statusCode, String errorKey) {
+        LogIn.logInPasswordRequest(phone, password)
                 .then()
-                .statusCode(422)
+                .statusCode(statusCode)
                 .log()
                 .all()
-                .body("errors.phone[0]", equalTo(ErrorMessages.INVALID_PHONE));
+                .body("errors.phone[0]", equalTo(ErrorMessages.ERROR_LOGIN_MAP.get(errorKey)));
     }
 
-    @Test
-    @DisplayName("[LOGIN][PASSWORD] phone doesn't exist")
-    public void testLogIn2() {
-        LogIn.logInPasswordRequest("375445863145", "2375843")
+    @ParameterizedTest
+    @CsvFileSource(resources = "/logInData.csv", numLinesToSkip = 1)
+    @DisplayName("[LOGIN][SMS] test")
+    public void testLogIn4(String phone, Integer statusCode, String errorKey) {
+        LogIn.logInSmsRequest(phone)
                 .then()
-                .statusCode(401)
+                .statusCode(statusCode)
                 .log()
                 .all()
-                .body("message", equalTo(ErrorMessages.INVALID_CREDENTIALS));
-    }
-
-    @Test
-    @DisplayName("[LOGIN][PASSWORD] invalid password")
-    public void testLogIn3() {
-        LogIn.logInPasswordRequest("375445853145", "28")
-                .then()
-                .statusCode(401)
-                .log()
-                .all()
-                .body("message", equalTo(ErrorMessages.INVALID_CREDENTIALS));
-    }
-
-    @Test
-    @DisplayName("[LOGIN][SMS] empty field")
-    public void testLogIn4() {
-        LogIn.logInSmsRequest()
-                .then()
-                .statusCode(422)
-                .log()
-                .all()
-                .body("errors.phone[0]", equalTo(ErrorMessages.REQUIRED_PHONE));
+                .body("errors.phone[0]",equalTo(ErrorMessages.ERROR_LOGIN_MAP.get(errorKey)));
     }
 
     @Test

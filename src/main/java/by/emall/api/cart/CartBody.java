@@ -1,10 +1,6 @@
-package by.emall.cart;
+package by.emall.api.cart;
 
 public class CartBody {
-//        "quantity": 1,
-//                "offer_id": 495915,
-//                "gtm_item_list_id": "ForgetToBuy",
-//                "gtm_item_list_name": "ForgetToBuy"
     private Integer quantity;
     private Integer offer_id;
 

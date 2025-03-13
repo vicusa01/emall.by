@@ -1,4 +1,4 @@
-package by.emall.logIn;
+package by.emall.api.logIn;
 
 public class LogInBody {
     private String phone;

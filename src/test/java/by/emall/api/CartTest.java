@@ -1,7 +1,7 @@
-package by.emall;
+package by.emall.api;
 
-import by.emall.cart.Cart;
-import by.emall.cart.ErrorMessages;
+import by.emall.api.cart.Cart;
+import by.emall.api.cart.ErrorMessages;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

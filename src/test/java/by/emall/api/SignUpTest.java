@@ -1,7 +1,7 @@
-package by.emall;
+package by.emall.api;
 
-import by.emall.signUp.ErrorMessages;
-import by.emall.signUp.SignUp;
+import by.emall.api.signUp.ErrorMessages;
+import by.emall.api.signUp.SignUp;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

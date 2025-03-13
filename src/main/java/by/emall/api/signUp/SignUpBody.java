@@ -1,4 +1,4 @@
-package by.emall.signUp;
+package by.emall.api.signUp;
 
 public class SignUpBody {
     private String name;
