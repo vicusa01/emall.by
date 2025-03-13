@@ -1,14 +1,14 @@
-package by.emall.signUp;
+package by.emall.api;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static by.emall.Token.API_TOKEN;
-import static by.emall.Token.HG_CLIENT_SECURITY;
+import static by.emall.api.Token.API_TOKEN;
+import static by.emall.api.Token.HG_CLIENT_SECURITY;
 
 public class Base {
     protected static final String BASE_URL = "https://api-preprod.emall.by/api/v1";
-
+    protected static final String CLIENT_ID = "/amz3YtXeLOiJPWF9JtU0r";
     protected static Map<String, String> getHeaders() {
         Map<String, String> headers = new HashMap<>();
         headers.put("Host", "api-preprod.emall.by");

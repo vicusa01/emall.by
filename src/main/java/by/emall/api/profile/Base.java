@@ -1,13 +1,13 @@
-package by.emall.cart;
+package by.emall.api.profile;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static by.emall.Token.API_TOKEN;
-import static by.emall.Token.HG_CLIENT_SECURITY;
+import static by.emall.api.Token.HG_CLIENT_SECURITY;
 
-public class Base {
-    protected static final String CART_URL ="https://api-preprod.emall.by/api/v1/basket";
+public class Base extends by.emall.api.Base {
+    public static String API_TOKEN="2AZBRqRZsR8i1t1zX9vdDFODxl5qjRud";
+    protected static final String BASE_URL = by.emall.api.Base.BASE_URL+"/user";
     protected static Map<String, String> getHeaders() {
         Map<String, String> headers = new HashMap<>();
         headers.put("Host", "api-preprod.emall.by");
