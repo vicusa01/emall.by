@@ -19,7 +19,7 @@ public class FavoritesTest {
         new Cookies().clickAcceptCookiesButton();
     }
     @Test
-    void testFavorites() {
+    void testViewFavorites() {
         homePage.clickFavoritesButton();
         Assertions.assertEquals(FavoritesPage.FAVOURITE_URL,Singleton.getUrl());
     }

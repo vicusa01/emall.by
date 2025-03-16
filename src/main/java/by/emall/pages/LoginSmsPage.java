@@ -29,6 +29,7 @@ public class LoginSmsPage {
     private final By INPUT_PHONE_LOCATOR = By.className("new-input-phone_input__XWAH5");
     private final By BUTTON_GET_SMS_CODE_LOCATOR = By.xpath("//button[@type='submit']");
     private final By BUTTON_LOGIN_BY_PASSWORD_LOCATOR = By.xpath("(//button[@type='button'])[1]");
+    private final By BUTTON_SIGN_UP_LOCATOR = By.xpath("//span[contains(string(.),'Зарегистрироваться')]");
     private final By ERROR_NOT_EXIST_PHONE_MESSAGE_LOCATOR = By.className("new-input-phone_message__H_yAc");
     private final By TITLE_SMS_INPUT_LOCATOR = By.xpath("//h1[contains(string(.),'код')]");
 
@@ -74,6 +75,11 @@ public class LoginSmsPage {
 
     public String getTitleSmsInputForm() {
         return driver.findElement(TITLE_SMS_INPUT_LOCATOR).getText();
+    }
+
+    public SignUpPage clickSignUpButton() {
+        driver.findElement(BUTTON_SIGN_UP_LOCATOR).click();
+        return new SignUpPage();
     }
 
 }

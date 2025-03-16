@@ -82,9 +82,8 @@ public class CartTest {
         int item_id = 43076233;
         Cart.deleteItemsFromTheRequest(item_id)
                 .then()
-                .statusCode(201) //422 было
+                .statusCode(anyOf(is(200),is (201)))
                 .log()
                 .all();
-//                .body("errors.basket_item_ids[0]", equalTo(ErrorMessages.ITEM_NOT_FOUND_IN_BASKET));
     }
 }

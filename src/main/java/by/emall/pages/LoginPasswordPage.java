@@ -21,26 +21,24 @@ public class LoginPasswordPage {
     public String getErrorLoginMessage() {
         return driver.findElement(ERROR_MESSAGE_LOCATOR).getText();
     }
+    private void enterCredentialsInFields(String phoneNumber, String password) {
+        WebElement inputPhoneElement = driver.findElement(INPUT_PHONE_LOCATOR);
+        WebElement inputPasswordElement = driver.findElement(INPUT_PASSWORD_LOCATOR);
+
+        inputPhoneElement.sendKeys(phoneNumber);
+        inputPasswordElement.sendKeys(password);
+    }
+
     public LoginPasswordPage enterCredentials(String phoneNumber, String password) {
-        WebElement inputPhoneElement;
-        WebElement inputPasswordElement;
-
         try {
-            inputPhoneElement = driver.findElement(INPUT_PHONE_LOCATOR);
-            inputPasswordElement = driver.findElement(INPUT_PASSWORD_LOCATOR);
-            inputPhoneElement.sendKeys(phoneNumber);
-            inputPasswordElement.sendKeys(password);
-
+            enterCredentialsInFields(phoneNumber, password);
         } catch (StaleElementReferenceException e) {
-            inputPhoneElement = driver.findElement(INPUT_PHONE_LOCATOR);
-            inputPasswordElement = driver.findElement(INPUT_PASSWORD_LOCATOR);
-
-            inputPasswordElement.sendKeys(password);
-            inputPhoneElement.sendKeys(phoneNumber);
+            enterCredentialsInFields(phoneNumber, password);
         }
 
         return this;
     }
+
     public LoginPasswordPage clickLoginButton() {
         driver.findElement(CLICK_LOGIN_BUTTON_LOCATOR).click();
         return this;
