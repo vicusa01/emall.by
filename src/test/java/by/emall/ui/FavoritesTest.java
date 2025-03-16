@@ -21,7 +21,7 @@ public class FavoritesTest {
     @Test
     void testFavorites() {
         homePage.clickFavoritesButton();
-        Assertions.assertEquals(FavoritesPage.FAVOURITE_URL,Singleton.getDriver().getCurrentUrl());
+        Assertions.assertEquals(FavoritesPage.FAVOURITE_URL,Singleton.getUrl());
     }
     @AfterEach
     public void closeSite() {

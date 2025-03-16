@@ -27,7 +27,7 @@ public class ProfileTest {
     @Test
     @DisplayName("Edit personal info")
     public void testEditPersonalInfo() {
-        Profile.putEditPersonalInfoRequest("Вкаукв", "Цыглер", "Вал", "tet@mail.ru", "+375294567898")
+        Profile.putEditPersonalInfoRequest("Вкаукв", "Цыглер", "Вал", "tet@mail.ru", "375445853145")
                 .then()
                 .statusCode(200)
                 .log()

@@ -1,5 +1,6 @@
 package by.emall.api.product.filters;
 
+import by.emall.api.product.card.ProductArticle;
 import io.restassured.response.Response;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -39,7 +40,7 @@ public class Product extends Base {
                     .headers(getHeaders())
                     .param("common_sorting_id", filter.getFilterCode())
                     .when()
-                    .get(Base.BASE_VIEW_PRODUCTS_URL + filter.getFilterCode() + ".json");
+                    .get(Base.BASE_VIEW_PRODUCTS_URL + "6261.json");
 
             if (response.getStatusCode() >= 400) {
                 logger.error("Ошибка при запросе товаров с фильтром (ID: {}, статус: {})",

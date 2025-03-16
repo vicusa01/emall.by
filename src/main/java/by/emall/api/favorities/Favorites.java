@@ -13,7 +13,7 @@ public class Favorites extends Base {
         logger.info("Добавление товара в избранное (ID: {})", productId);
         try {
             Response response = given()
-                    .headers(getHeaders())
+                    .headers(by.emall.api.Base.getHeaders())
                     .when()
                     .post(BASE_FAVORITES_EDIT_URL + productId);
 

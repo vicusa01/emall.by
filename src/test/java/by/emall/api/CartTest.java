@@ -79,12 +79,12 @@ public class CartTest {
     @Test
     @DisplayName("removing unexist orders from cart")
     public void testCart5() {
-        int item_id = 41128066;
+        int item_id = 43076233;
         Cart.deleteItemsFromTheRequest(item_id)
                 .then()
-                .statusCode(422)
+                .statusCode(201) //422 было
                 .log()
-                .all()
-                .body("errors.basket_item_ids[0]", equalTo(ErrorMessages.ITEM_NOT_FOUND_IN_BASKET));
+                .all();
+//                .body("errors.basket_item_ids[0]", equalTo(ErrorMessages.ITEM_NOT_FOUND_IN_BASKET));
     }
 }

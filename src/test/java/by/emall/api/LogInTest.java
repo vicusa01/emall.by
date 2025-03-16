@@ -28,28 +28,50 @@ public class LogInTest {
                 .body("errors.password[0]", equalTo(ErrorMessages.REQUIRED_PASSWORD));
     }
 
-    @ParameterizedTest
-    @CsvFileSource(resources = "/logInData.csv", numLinesToSkip = 1)
-    @DisplayName("[LOGIN][PASSWORD] test")
-    public void testLogIn1(String phone, String password, Integer statusCode, String errorKey) {
-        LogIn.logInPasswordRequest(phone, password)
+    @Test
+    @DisplayName("[LOGIN][PASSWORD] invalid phone")
+    public void testLogIn1() {
+        LogIn.logInPasswordRequest("75293527282", "2375843")
+
                 .then()
-                .statusCode(statusCode)
+                .statusCode(422)
                 .log()
                 .all()
-                .body("errors.phone[0]", equalTo(ErrorMessages.ERROR_LOGIN_MAP.get(errorKey)));
+                .body("errors.phone[0]", equalTo(ErrorMessages.INVALID_PHONE));
     }
 
-    @ParameterizedTest
-    @CsvFileSource(resources = "/logInData.csv", numLinesToSkip = 1)
-    @DisplayName("[LOGIN][SMS] test")
-    public void testLogIn4(String phone, Integer statusCode, String errorKey) {
-        LogIn.logInSmsRequest(phone)
+    @Test
+    @DisplayName("[LOGIN][PASSWORD] phone doesn't exist")
+    public void testLogIn2() {
+        LogIn.logInPasswordRequest("375445863145", "2375843")
+
                 .then()
-                .statusCode(statusCode)
+                .statusCode(401)
                 .log()
                 .all()
-                .body("errors.phone[0]",equalTo(ErrorMessages.ERROR_LOGIN_MAP.get(errorKey)));
+                .body("message", equalTo(ErrorMessages.INVALID_CREDENTIALS));
+    }
+
+    @Test
+    @DisplayName("[LOGIN][PASSWORD] invalid password")
+    public void testLogIn3() {
+        LogIn.logInPasswordRequest("375445853145", "28")
+                .then()
+                .statusCode(401)
+                .log()
+                .all()
+                .body("message", equalTo(ErrorMessages.INVALID_CREDENTIALS));
+    }
+
+    @Test
+    @DisplayName("[LOGIN][SMS] empty field")
+    public void testLogIn4() {
+        LogIn.logInSmsRequest()
+                .then()
+                .statusCode(422)
+                .log()
+                .all()
+                .body("errors.phone[0]", equalTo(ErrorMessages.REQUIRED_PHONE));
     }
 
     @Test
@@ -99,7 +121,7 @@ public class LogInTest {
     @Test
     @DisplayName("[LOGIN] success")
     public void testLogIn9() {
-        LogIn.logInPasswordRequest("375445853145", "etfds@455cS")
+        LogIn.logInPasswordRequest("375445853145", "14041976Dfkbr@")
                 .then()
                 .statusCode(200)
                 .log()

@@ -7,7 +7,7 @@ public class XPathUtil {
         return "//span[text()='" + category.getLabel() + "']";
     }
     public static String getXPathOfTitleByCategory(CatalogSections category) {
-        return "//h1[contains(string(.)='"+category.getLabel()+")]";
+        return "//h1[contains(string(.), '"+category.getLabel()+"')]";
     }
 
 }
