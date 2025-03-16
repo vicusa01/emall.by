@@ -32,7 +32,7 @@ public class CatalogTest {
     @DisplayName("Checking the correctness of the search")
     public void testDisplayCorrectTitleSearch(CatalogSections section) {
         String actualTitle = homePage.searchProduct(section).getCatalogTitle(section);
-        String expectedTitle = STR."По запросу «\{section.getLabel()}»";
+        String expectedTitle = "По запросу «"+section.getLabel()+"»";
         Assertions.assertTrue(actualTitle.contains(expectedTitle),
                 "Заголовок страницы не содержит ожидаемую строку для секции: " + section +
                         "\nОжидалось: " + expectedTitle +
