@@ -9,7 +9,6 @@ public enum CatalogSections {
     HOUSEHOLD_CHEMICALS("Бытовая химия, хозтовары"),
     FURNITURE("Мебель"),
     INTERIOR_TABLEWARE("Интерьер, посуда"),
-    CONSTRUCTION_RENOVATION("Стройка, ремонт"),
     GARDEN("Дача, сад"),
     GROCERIES("Продукты"),
     HOME_APPLIANCES("Бытовая техника");
