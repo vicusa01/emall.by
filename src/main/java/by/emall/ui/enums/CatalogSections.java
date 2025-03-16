@@ -1,4 +1,4 @@
-package by.emall.pages.enums;
+package by.emall.ui.enums;
 
 public enum CatalogSections {
     ELECTRONICS("Электроника"),

@@ -1,4 +1,4 @@
-package by.emall.pages;
+package by.emall.ui.pages;
 
 public class CartPage {
 }

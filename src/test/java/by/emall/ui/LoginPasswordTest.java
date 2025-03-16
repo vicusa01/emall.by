@@ -1,9 +1,9 @@
 package by.emall.ui;
 
-import by.emall.pages.HomePage;
-import by.emall.pages.LoginPasswordPage;
-import by.emall.pages.base.singleton.Cookies;
-import by.emall.pages.base.singleton.Singleton;
+import by.emall.ui.pages.HomePage;
+import by.emall.ui.pages.LoginPasswordPage;
+import by.emall.ui.pages.CookiesPage;
+import by.emall.ui.singleton.Singleton;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +17,7 @@ public class LoginPasswordTest {
     @BeforeEach
     public void beforeEach() {
         homePage = new HomePage().openPage();
-        new Cookies().clickAcceptCookiesButton();
+        new CookiesPage().clickAcceptCookiesButton();
         loginPasswordPage = new LoginPasswordPage();
     }
     @ParameterizedTest

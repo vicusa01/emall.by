@@ -1,4 +1,4 @@
-package by.emall.pages.base.utils;
+package by.emall.ui.utils;
 
 public class WaitUtil {
 

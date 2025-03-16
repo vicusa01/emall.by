@@ -1,9 +1,9 @@
 package by.emall.ui;
 
-import by.emall.pages.HomePage;
-import by.emall.pages.LoginSmsPage;
-import by.emall.pages.base.singleton.Cookies;
-import by.emall.pages.base.singleton.Singleton;
+import by.emall.ui.pages.HomePage;
+import by.emall.ui.pages.LoginSmsPage;
+import by.emall.ui.pages.CookiesPage;
+import by.emall.ui.singleton.Singleton;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +15,7 @@ public class LoginSmsTest {
     @BeforeEach
     public void beforeEach() {
         homePage = new HomePage().openPage();
-        new Cookies().clickAcceptCookiesButton();
+        new CookiesPage().clickAcceptCookiesButton();
         loginPage = new LoginSmsPage();
     }
     @Test

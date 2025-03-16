@@ -1,6 +1,6 @@
-package by.emall.pages;
+package by.emall.ui.pages;
 
-import by.emall.pages.base.singleton.Singleton;
+import by.emall.ui.singleton.Singleton;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;

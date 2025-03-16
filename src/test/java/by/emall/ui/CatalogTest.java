@@ -1,10 +1,10 @@
 package by.emall.ui;
 
-import by.emall.pages.enums.CatalogSections;
-import by.emall.pages.CatalogPage;
-import by.emall.pages.HomePage;
-import by.emall.pages.base.singleton.Cookies;
-import by.emall.pages.base.singleton.Singleton;
+import by.emall.ui.enums.CatalogSections;
+import by.emall.ui.pages.CatalogPage;
+import by.emall.ui.pages.HomePage;
+import by.emall.ui.pages.CookiesPage;
+import by.emall.ui.singleton.Singleton;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -15,7 +15,7 @@ public class CatalogTest {
     @BeforeEach
     public void beforeEach() {
         homePage = new HomePage().openPage();
-        new Cookies().clickAcceptCookiesButton();
+        new CookiesPage().clickAcceptCookiesButton();
         catalogPage = new CatalogPage();
     }
     @ParameterizedTest

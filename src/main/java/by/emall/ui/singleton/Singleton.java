@@ -1,6 +1,6 @@
-package by.emall.pages.base.singleton;
+package by.emall.ui.singleton;
 
-import by.emall.pages.base.utils.WaitUtil;
+import by.emall.ui.utils.WaitUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 

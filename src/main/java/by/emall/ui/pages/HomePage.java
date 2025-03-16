@@ -1,8 +1,8 @@
-package by.emall.pages;
+package by.emall.ui.pages;
 
-import by.emall.pages.enums.CatalogSections;
-import by.emall.pages.base.singleton.Singleton;
-import by.emall.pages.base.utils.XPathUtil;
+import by.emall.ui.enums.CatalogSections;
+import by.emall.ui.singleton.Singleton;
+import by.emall.ui.utils.XPathUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
