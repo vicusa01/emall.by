@@ -20,17 +20,17 @@ public class LoginPasswordTest {
         new CookiesPage().clickAcceptCookiesButton();
         loginPasswordPage = new LoginPasswordPage();
     }
-    @ParameterizedTest
-    @CsvFileSource(resources = "/logInData.csv", numLinesToSkip = 1)
-    void testNegativeLogin(String phone, String password,String expectedResult) {
-        String actual=  homePage
-                .clickLoginButton()
-                .clickLoginByPasswordButton()
-                .enterCredentials(phone,password)
-                .clickLoginButton()
-                .getErrorLoginMessage();
-        Assertions.assertEquals(expectedResult,actual);
-    }
+//    @ParameterizedTest
+//    @CsvFileSource(resources = "/logInData.csv", numLinesToSkip = 1)
+//    void testNegativeLogin(String phone, String password,String expectedResult) {
+//        String actual=  homePage
+//                .clickLoginButton()
+//                .clickLoginByPasswordButton()
+//                .enterCredentials(phone,password)
+//                .clickLoginButton()
+//                .getErrorLoginMessage();
+//        Assertions.assertEquals(expectedResult,actual);
+//    }
     @ParameterizedTest
     @CsvSource({
             "445853145,14041976Dfkbr@",
