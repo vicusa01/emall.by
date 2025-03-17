@@ -31,4 +31,4 @@
 ### 1. Клонирование репозитория
 Склонируйте репозиторий на ваш компьютер:
 ```bash
-git clone https://github.com/ваш-username/ваш-репозиторий.git
+https://github.com/vicusa01/emall.by.git
