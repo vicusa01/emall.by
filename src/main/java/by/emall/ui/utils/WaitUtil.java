@@ -6,7 +6,7 @@ public class WaitUtil {
         try {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
-            Thread.currentThread().interrupt(); // Восстанавливаем флаг прерывания потока
+            Thread.currentThread().interrupt();
             e.printStackTrace();
         }
     }
