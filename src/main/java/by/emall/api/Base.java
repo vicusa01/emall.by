@@ -8,7 +8,7 @@ import static by.emall.api.Token.HG_CLIENT_SECURITY;
 
 public class Base {
     protected static final String BASE_URL = "https://api-preprod.emall.by/api/v1";
-    protected static final String CLIENT_ID = "/33xjhb-pu-C6lkhzKrurU";
+    protected static final String CLIENT_ID = "/e0UcVUKCkI7TmGbvVSpYx";
     protected static Map<String, String> getHeaders() {
         Map<String, String> headers = new HashMap<>();
         headers.put("Host", "api-preprod.emall.by");

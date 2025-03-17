@@ -25,15 +25,10 @@ public class SignUpPage {
     private final By INPUT_EMAIL_LOCATOR = By.xpath("//input[@name='email']");
     private final By INPUT_PASSWORD_LOCATOR = By.xpath("//input[@name='password']");
     private final By INPUT_PASSWORD_REPEAT_LOCATOR = By.xpath("//input[@name='passwordRepeat']");
-    private final By CHECKBOX_PERSONAL_DATA_LOCATOR = By.xpath("(//span[@class='checkbox_checkbox__pseudo__c2vTZ']/i)[4]");
+    private final By CHECKBOX_PERSONAL_DATA_LOCATOR =
+            By.xpath("(//span[@class='checkbox_checkbox__pseudo__c2vTZ']/i)[4]");
     private final By BUTTON_NEXT_LOCATOR = By.xpath("//button[contains(@class, 'btn_btn__QQYBS')]");
-    private final By ERROR_NAME_LOCATOR = By.xpath("//div[@class='input_input_wrapper__Qa21g input_input_wrapper_error__qEL4H']//div[contains(@class, 'input_message__veX8F') and text()='Имя обязательно для заполнения']");
-    private final By ERROR_SURNAME_LOCATOR = By.xpath("//div[@class='input_input_wrapper__Qa21g input_input_wrapper_error__qEL4H']//div[contains(@class, 'input_message__veX8F') and text()='Фамилия обязательна для заполнения']");
-    private final By ERROR_PATRONYMIC_LOCATOR = By.xpath("//div[@class='input_input_wrapper__Qa21g input_input_wrapper_error__qEL4H']//div[contains(@class, 'input_message__veX8F') and text()='Отчество обязательно для заполнения']");
-    private final By ERROR_PHONE_LOCATOR = By.xpath("//div[@class='new-input-phone_input_wrapper__cjYkb new-input-phone_input_wrapper_error__gpYqX']//div[contains(@class, 'new-input-phone_message__H_yAc') and text()='Номер телефона введён некорректно']");
-    private final By ERROR_EMAIL_LOCATOR = By.xpath("//div[@class='input_input_wrapper__Qa21g input_input_wrapper_error__qEL4H']//div[contains(@class, 'input_message__veX8F') and text()='Email обязателен для заполнения']");
-    private final By ERROR_PASSWORD_LOCATOR = By.xpath("//div[@class='registration_error___J4Zl' and text()='Создание пароля обязательно']");
-    private final By ERROR_CONSENT_LOCATOR = By.xpath("//div[@class='registration_error___J4Zl' and text()='Необходимо согласие']");
+
 
 
     private void enterTextInPasswordFields(String password, String passwordRepeat) {
