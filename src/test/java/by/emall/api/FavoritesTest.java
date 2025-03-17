@@ -23,6 +23,7 @@ public class FavoritesTest {
                 .log()
                 .all();
     }
+
     @Test
     @DisplayName("Adding unexist product to favorites")
     public void testAddToFavorites1() {
@@ -33,6 +34,7 @@ public class FavoritesTest {
                 .all()
                 .body("message", equalTo(ErrorMessages.PRODUCT_NOT_FOUND));
     }
+
     @Test
     @DisplayName("View list of favorites")
     public void testViewFavorites() {

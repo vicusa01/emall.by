@@ -12,12 +12,14 @@ import org.junit.jupiter.params.provider.EnumSource;
 public class CatalogTest {
     HomePage homePage;
     CatalogPage catalogPage;
+
     @BeforeEach
     public void beforeEach() {
         homePage = new HomePage().openPage();
         new CookiesPage().clickAcceptCookiesButton();
         catalogPage = new CatalogPage();
     }
+
     @ParameterizedTest
     @EnumSource(CatalogSections.class)
     @DisplayName("Checking the correctness of the Catalog section titles")
@@ -32,7 +34,7 @@ public class CatalogTest {
     @DisplayName("Checking the correctness of the search")
     public void testDisplayCorrectTitleSearch(CatalogSections section) {
         String actualTitle = homePage.searchProduct(section).getCatalogTitle(section);
-        String expectedTitle = "По запросу «"+section.getLabel()+"»";
+        String expectedTitle = "По запросу «" + section.getLabel() + "»";
         Assertions.assertTrue(actualTitle.contains(expectedTitle),
                 "Заголовок страницы не содержит ожидаемую строку для секции: " + section +
                         "\nОжидалось: " + expectedTitle +

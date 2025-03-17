@@ -14,35 +14,39 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class LoginPasswordTest {
     HomePage homePage;
     LoginPasswordPage loginPasswordPage;
+
     @BeforeEach
     public void beforeEach() {
         homePage = new HomePage().openPage();
         new CookiesPage().clickAcceptCookiesButton();
         loginPasswordPage = new LoginPasswordPage();
     }
-//    @ParameterizedTest
-//    @CsvFileSource(resources = "/logInData.csv", numLinesToSkip = 1)
-//    void testNegativeLogin(String phone, String password,String expectedResult) {
-//        String actual=  homePage
-//                .clickLoginButton()
-//                .clickLoginByPasswordButton()
-//                .enterCredentials(phone,password)
-//                .clickLoginButton()
-//                .getErrorLoginMessage();
-//        Assertions.assertEquals(expectedResult,actual);
-//    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/logInData.csv", numLinesToSkip = 1)
+    void testNegativeLogin(String phone, String password, String expectedResult) {
+        String actual = homePage
+                .clickLoginButton()
+                .clickLoginByPasswordButton()
+                .enterCredentials(phone, password)
+                .clickLoginButton()
+                .getErrorLoginMessage();
+        Assertions.assertEquals(expectedResult, actual);
+    }
+
     @ParameterizedTest
     @CsvSource({
             "445853145,14041976Dfkbr@",
     })
     void testPositiveLogin(String phone, String password) {
-       homePage
+        homePage
                 .clickLoginButton()
                 .clickLoginByPasswordButton()
-                .enterCredentials(phone,password)
+                .enterCredentials(phone, password)
                 .clickLoginButton();
-        Assertions.assertEquals("https://emall.by/",Singleton.getUrl());
+        Assertions.assertEquals("https://emall.by/", Singleton.getUrl());
     }
+
     @AfterEach
     public void closeSite() {
         Singleton.quit();

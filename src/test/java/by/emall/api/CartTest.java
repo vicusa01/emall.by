@@ -19,7 +19,7 @@ public class CartTest {
     public void testCart() {
         Cart.getRequest()
                 .then()
-                .statusCode(anyOf(is(200),is (201)))
+                .statusCode(anyOf(is(200), is(201)))
                 .log()
                 .all();
     }
@@ -82,7 +82,7 @@ public class CartTest {
         int item_id = 43076233;
         Cart.deleteItemsFromTheRequest(item_id)
                 .then()
-                .statusCode(anyOf(is(200),is (201)))
+                .statusCode(anyOf(is(200), is(201)))
                 .log()
                 .all();
     }

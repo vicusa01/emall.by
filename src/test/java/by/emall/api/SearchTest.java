@@ -41,6 +41,7 @@ public class SearchTest {
                 .all()
                 .body("errors.query[0]", equalTo(ERROR_QUERY_REQUIRED));
     }
+
     @Test
     @DisplayName("Error on query with only spaces")
     public void testSearchProduct2() {

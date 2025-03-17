@@ -126,6 +126,6 @@ public class LogInTest {
                 .statusCode(200)
                 .log()
                 .all()
-                .body("surname",equalTo("Цыглер"));
+                .body("surname", equalTo("Цыглер"));
     }
 }

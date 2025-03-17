@@ -34,6 +34,7 @@ public class Singleton {
             driver = null;
         }
     }
+
     public static String getUrl() {
         WaitUtil.sleep(1500);
         return driver.getCurrentUrl();

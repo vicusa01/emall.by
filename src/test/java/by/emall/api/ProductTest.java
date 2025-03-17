@@ -24,6 +24,7 @@ public class ProductTest {
                 .log()
                 .all();
     }
+
     @Test
     @DisplayName("View product card from category")
     public void testViewProductCard1() {
@@ -33,6 +34,7 @@ public class ProductTest {
                 .log()
                 .all();
     }
+
     @Test
     @DisplayName("View products by filters")
     public void testViewProductCard2() {

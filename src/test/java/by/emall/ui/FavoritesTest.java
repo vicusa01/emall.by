@@ -12,16 +12,19 @@ import org.junit.jupiter.api.Test;
 public class FavoritesTest {
 
     HomePage homePage;
+
     @BeforeEach
     public void beforeEach() {
         homePage = new HomePage().openPage();
         new CookiesPage().clickAcceptCookiesButton();
     }
+
     @Test
     void testViewFavorites() {
         homePage.clickFavoritesButton();
-        Assertions.assertEquals(FavoritesPage.FAVOURITE_URL,Singleton.getUrl());
+        Assertions.assertEquals(FavoritesPage.FAVOURITE_URL, Singleton.getUrl());
     }
+
     @AfterEach
     public void closeSite() {
         Singleton.quit();

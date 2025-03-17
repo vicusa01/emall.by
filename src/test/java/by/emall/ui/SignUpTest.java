@@ -22,6 +22,7 @@ public class SignUpTest {
     LoginSmsPage loginPage;
     SignUpPage signUpPage;
     AgreementPage agreementPage;
+
     @BeforeEach
     public void beforeEach() {
         homePage = new HomePage().openPage();
@@ -34,9 +35,9 @@ public class SignUpTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/signUpData.csv", numLinesToSkip = 1)
     @DisplayName("Test registration form with invalid data")
-    public void testInvalidRegistrationFields(String name, String surname, String patronymic, String phone, String email, String password, String repeatPassword,String expectedError) {
-      homePage.clickLoginButton().clickSignUpButton().enterPersonalInfo(name,surname,patronymic,phone,email).enterPasswordCredentials(password,repeatPassword).checkPersonalDataCheckbox().acceptAgreement().clickNextButton();
-        WebElement nameError = Singleton.getDriver().findElement(By.xpath("//div[contains(text(),'"+expectedError+"')]"));
+    public void testInvalidRegistrationFields(String name, String surname, String patronymic, String phone, String email, String password, String repeatPassword, String expectedError) {
+        homePage.clickLoginButton().clickSignUpButton().enterPersonalInfo(name, surname, patronymic, phone, email).enterPasswordCredentials(password, repeatPassword).checkPersonalDataCheckbox().acceptAgreement().clickNextButton();
+        WebElement nameError = Singleton.getDriver().findElement(By.xpath("//div[contains(text(),'" + expectedError + "')]"));
         assertTrue(nameError.isDisplayed());
     }
 

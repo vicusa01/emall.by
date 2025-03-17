@@ -21,6 +21,7 @@ public class LoginPasswordPage {
     public String getErrorLoginMessage() {
         return driver.findElement(ERROR_MESSAGE_LOCATOR).getText();
     }
+
     private void enterCredentialsInFields(String phoneNumber, String password) {
         WebElement inputPhoneElement = driver.findElement(INPUT_PHONE_LOCATOR);
         WebElement inputPasswordElement = driver.findElement(INPUT_PASSWORD_LOCATOR);
